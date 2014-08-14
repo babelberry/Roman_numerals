@@ -37,7 +37,7 @@ require 'roman_numerals'
 			end
 
 			it "returns IX when the input is 9" do
-				expect(units(9)).to eq 'IX'
+				expect(converter(9)).to eq 'IX'
 			end
 		end 
 	end 
@@ -49,10 +49,10 @@ require 'roman_numerals'
 		end
 
 		it 'returns XI when the input is 11' do
-			expect(tens(11)).to eq "XI"
+			expect(converter(11)).to eq "XI"
 		end 
 
-		it 'returns XI when the input is 99' do
+		it 'returns XCIX when the input is 99' do
 			expect(tens(99)).to eq "XCIX"
 		end 
 
@@ -66,9 +66,27 @@ require 'roman_numerals'
 		end 
 
 		it 'returns CCCXXXIII when the input 333' do
-			expect(hundreds(333)).to eq "CCCXXXIII"
+			expect(converter(333)).to eq "CCCXXXIII"
 		end 
 
+		it 'returns CMXCIX when the input 999' do
+			expect(hundreds(999)).to eq "CMXCIX"
+		end 
 
 	end
- 
+
+	context 'Input between 1000 and 3999' do
+
+		it 'returns M when the input is 1000' do
+			expect(converter(1000)).to eq "M"
+		end
+		it 'returns MCXI when the input is 1111' do
+			expect(thousands(1111)).to eq "MCXI"
+		end
+	end
+	
+	context 'Input invalid' do
+		it 'returns This number is too big when the input is 4000' do
+			expect(converter(4000)).to eq "This number is too big"
+		end
+	end 
