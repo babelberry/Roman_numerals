@@ -5,7 +5,7 @@ Roman Numerals
 
 A programme that converts arabic numbers from 1 to 3999 into roman numerals. This Kata was given to us as a day challenge on week 3 of Makers Academy. 
 
-![Screenshot](https://github.com/binaryberry/screenshot.png)
+![Screenshot](https://github.com/binaryberry/Roman_numerals/blob/master/screenshot.png)
 
 ## How was it built?
 
